@@ -1,21 +1,14 @@
 import express from "express";
-
 import path, { dirname } from "path";
-
 import { fileURLToPath } from "url";
-
 import mysql from "mysql2";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
 const app = express();
-
 const port = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.json());
-
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 const db = mysql.createConnection({
