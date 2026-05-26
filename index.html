@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Lead Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="login-page">
+        <div id="login-form">
+            <form id="form">
+                <label for="name"><strong>Name:</strong></label><br />
+                <input type="text" id="name" name="name" placeholder="Name"><br /><br />
+
+                <label for="username"><strong>Username:</strong></label><br />
+                <input type="text" id="username" name="username" placeholder="Username"><br /><br />
+
+                <label for="password"><strong>Password:</strong></label><br />
+                <input type="password" id="password" name="password" placeholder="Password"><br /><br />
+
+                <button id="login-button" type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-page" class="hidden">
+        <div id="admin-grid" class="hidden">
+            <div id="admin-box">
+                <p id="user-iconbox"><strong id="admin-initials">MR</strong></p>
+                <p id="user-name"><strong id="admin-name-sidebar">Muhammad Ammar Rashid</strong></p>
+            </div><br />
+            <p id="user-role"><strong>Role: Administrator</strong></p><br />
+
+            <nav>
+                <ul style="list-style-type: none">
+                    <li><a href="#leads-table"><i class="fa-solid fa-table"></i>Leads List</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="main-grid" class="hidden">
+            <h1>Welcome back, <span id="admin-name">Admin</span></h1>
+            <div id="form-grid" class="hidden">
+                <h1 id="form-header">Leads Form</h1>
+                <form id="leads-form">
+                    <input type="hidden" id="edit-id">
+
+                    <label for="lead-name"><strong>Full Name:</strong></label><br />
+                    <input type="text" id="lead-name" name="fullname" placeholder="Full Name"><br /><br />
+
+                    <label for="lead-email"><strong>Email:</strong></label><br />
+                    <input type="email" id="lead-email" name="leadEmail" placeholder="Email"><br /><br />
+
+                    <label for="phone-number"><strong>Phone Number:</strong></label><br />
+                    <input type="tel" id="phone-number" name="phoneNumber" placeholder="Phone Number"><br /><br />
+
+                    <label for="lead-source"><strong>Lead Source:</strong></label><br />
+                    <input type="text" id="lead-source" name="leadSource" placeholder="Source"><br /><br />
+                    
+                    <label for="lead-status"><strong>Status:</strong></label><br />
+                    <input type="text" id="lead-status" name="leadStatus" placeholder="Status"><br /><br />
+
+                    <label for="lead-notes"><strong>Lead Notes:</strong></label><br />
+                    <input type="textarea" id="lead-notes" name="leadNotes" placeholder="Notes"><br /><br />
+
+                    <button id="submit-lead" type="submit">Add Lead</button>
+
+                </form>
+            </div>
+                
+            <div id="leads-grid">
+                <table class="leads-table">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Lead Source</th>
+                            <th>Status</th>
+                            <th>Notes/Follow-Up</th>
+                            <th>Change Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="leads-table-body">
+                    </tbody>
+
+                </table>
+                <br />
+                <li><a id="add" href="#leads-form"><i class="fa-solid fa-plus"></i>Add New Lead</a></li>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
